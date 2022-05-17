@@ -30,7 +30,7 @@ The keys are equivalent to position in array, the beginning of the maze above wo
 
 ## Finding the shortest path
 Now with the graph, the start position and the goal, we just need to find the better solution. So we run through the graph, saving the visited positions and exploring the neighbours.
-```
+```python
 def find_shortest_path(graph, start, goal):
   explored = []
   queue = [[start]]
@@ -53,7 +53,7 @@ def find_shortest_path(graph, start, goal):
         if neighbour == goal:
           return new_path
       explored.append(node)
-```(python)
+```
 
 ## Showing the result
 After we find the best path, we just need tho show the result. In this case I just print on terminal the rat walking by.
