@@ -26,6 +26,7 @@ We need to parse this to a graph, so we can apply the A* search to find the shor
 
 After split the columns and lines and saving the position of the start and the end, I created a collection with the paths from the beginning to the end.
 The keys are equivalent to position in array, the beginning of the maze above would look like this:
+
 ![Maze Graph](./assets/maze_graph.png)
 
 ## Finding the shortest path
