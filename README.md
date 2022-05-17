@@ -57,5 +57,5 @@ def find_shortest_path(graph, start, goal):
 ```
 
 ## Showing the result
-After we find the best path, we just need tho show the result. In this case I just print on terminal the rat walking by.
+After we find the best path, we just need tho show the result. In this case I just print on terminal where the rat walk by.
 ![Showing result](./assets/solving_maze.gif)
