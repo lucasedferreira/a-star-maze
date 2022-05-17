@@ -1,6 +1,7 @@
 
 # Solving a maze with A*
 The purpose of this code is to solve a provided maze using the A* search algorithm.
+
 Before we start, I strongly recommend reading [this article](https://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html).
 
 ## Parsing the Maze
