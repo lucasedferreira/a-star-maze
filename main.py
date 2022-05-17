@@ -4,12 +4,14 @@ import os
 import time
 
 WALKABLE = ['.', 'C', 'E']
+START = "S"
+END = "E"
 
 
 def solve(file):
   maze = parse_maze(file)
-  start = get_position(maze, "S")
-  end = get_position(maze, "E")
+  start = get_position(maze, START)
+  end = get_position(maze, END)
 
   graph = build_graph(maze, start)
   path = find_shortest_path(graph, np.array2string(start), np.array2string(end))
@@ -109,8 +111,6 @@ def find_shortest_path(graph, start, goal):
   raise Exception("There's no connecting path")
 
 def print_solution(maze, path):
-  clear = lambda: os.system('clear')
-  clear()
   update_maze(maze)
 
   for index, currentPosition in enumerate(path):
@@ -125,7 +125,6 @@ def print_solution(maze, path):
       belch = True
     maze[currentPosition[0], currentPosition[1]] = 'ö'
 
-    clear()
     update_maze(maze)
 
     sleep = .3
@@ -135,6 +134,8 @@ def print_solution(maze, path):
     time.sleep(sleep)
 
 def update_maze(maze):
+  clear = lambda: os.system('clear')
+  clear()
   print('\n'.join([''.join(['{}'.format(item) for item in row]) for row in maze]))
 
 
@@ -142,14 +143,3 @@ if __name__ == "__main__":
   file = open("maze-2.txt", "r")
   solve(file)
   print(file.read())
-
-  # array = np.array([10, 2])
-  # string = np.array2string(array)
-  # test = np.fromstring(string[1:-1], dtype=int, sep=' ')
-  # print(test[0])
-
-  # array_ = np.array([[1,2,3]])
-  # add_row = np.array([[4,5,6]])
-
-  # array_ = np.concatenate((array_, add_row), axis=0)
-  # print(array_)
